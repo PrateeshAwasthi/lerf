@@ -20,6 +20,15 @@ Swap out the network config to use OpenCLIP or CLIP here.
 from lerf.encoders.clip_encoder import CLIPNetworkConfig
 from lerf.encoders.openclip_encoder import OpenCLIPNetworkConfig
 
+def print_args(**kwargs):
+    # Check if the key exists in kwargs
+    if 'grad_scaler' in kwargs:
+        # Delete the key and its value
+        print("Yes")
+        del kwargs['grad_scaler']
+    
+
+
 lerf_method = MethodSpecification(
     config=TrainerConfig(
         method_name="lerf",
@@ -27,6 +36,7 @@ lerf_method = MethodSpecification(
         steps_per_save=2000,
         max_num_iterations=30000,
         mixed_precision=True,
+        print_args(**kwargs)
         pipeline=LERFPipelineConfig(
             datamanager=LERFDataManagerConfig(
                 dataparser=NerfstudioDataParserConfig(train_split_fraction=0.99),
