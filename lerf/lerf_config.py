@@ -20,6 +20,7 @@ Swap out the network config to use OpenCLIP or CLIP here.
 from lerf.encoders.clip_encoder import CLIPNetworkConfig
 from lerf.encoders.openclip_encoder import OpenCLIPNetworkConfig
 
+print(**kwargs)
 
 lerf_method = MethodSpecification(
     config=TrainerConfig(
@@ -28,7 +29,6 @@ lerf_method = MethodSpecification(
         steps_per_save=2000,
         max_num_iterations=30000,
         mixed_precision=True,
-        print(**kwargs)
         pipeline=LERFPipelineConfig(
             datamanager=LERFDataManagerConfig(
                 dataparser=NerfstudioDataParserConfig(train_split_fraction=0.99),
