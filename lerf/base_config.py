@@ -54,7 +54,9 @@ class InstantiateConfig(PrintableConfig):
 
     def setup(self, **kwargs) -> Any:
         """Returns the instantiated object using the config."""
-        print(**kwargs)
+        if 'grad_scaler' in kwargs:
+        # Delete the key and its value
+            del kwargs['grad_scaler']
         return self._target(self, **kwargs)
 
 
