@@ -5,7 +5,7 @@ from typing import Literal, Type
 import torch.distributed as dist
 from torch.nn.parallel import DistributedDataParallel as DDP
 
-from nerfstudio.configs import base_config as cfg
+# from nerfstudio.configs import base_config as cfg
 from nerfstudio.models.base_model import ModelConfig
 from nerfstudio.pipelines.base_pipeline import (
     VanillaPipeline,
@@ -17,6 +17,7 @@ from lerf.data.lerf_datamanager import (
     LERFDataManagerConfig,
 )
 from lerf.lerf import LERFModel, LERFModelConfig
+from lerf.lerf import base_config as cfg
 from lerf.encoders.image_encoder import BaseImageEncoderConfig, BaseImageEncoder
 
 
