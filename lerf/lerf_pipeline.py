@@ -17,7 +17,7 @@ from lerf.data.lerf_datamanager import (
     LERFDataManagerConfig,
 )
 from lerf.lerf import LERFModel, LERFModelConfig
-from lerf.lerf import base_config as cfg
+from lerf import base_config as cfg
 from lerf.encoders.image_encoder import BaseImageEncoderConfig, BaseImageEncoder
 
 
