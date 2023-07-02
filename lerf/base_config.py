@@ -54,6 +54,7 @@ class InstantiateConfig(PrintableConfig):
 
     def setup(self, **kwargs) -> Any:
         """Returns the instantiated object using the config."""
+        print(**kwargs)
         return self._target(self, **kwargs)
 
 
